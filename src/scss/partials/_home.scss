@@ -1,0 +1,44 @@
+.home {
+  &__left {
+    position: relative;
+    z-index: 1;
+    width: 30rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+  }
+  &__right {
+    position: absolute;
+    width: 25rem;
+    top: 0;
+    right: 5%;
+    z-index: -1;
+  }
+  &__heading {
+    position: relative;
+    font-family: "Coolvetica", sans-serif;
+    font-size: 4rem;
+    letter-spacing: 2.5px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 2rem 0 1.5rem;
+    display: inline-block;
+  }
+  &__logo {
+    width: 2.7rem;
+    margin-left: 1rem;
+    animation: rotateIn 1s linear both 1.8s;
+  }
+  &__logoTilt {
+    width: 2.7rem;
+    margin-left: 1rem;
+    transform: rotate(4deg);
+  }
+  &__para {
+    font-size: 1.2rem;
+    color: $gray2;
+    letter-spacing: 0.5px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.4s;
+  }
+}

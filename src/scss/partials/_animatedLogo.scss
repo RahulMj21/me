@@ -1,0 +1,36 @@
+.animatedLogo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &__solid {
+    position: absolute;
+    transform: rotate(4deg) translatey(5%);
+    opacity: 0;
+    z-index: 1;
+    animation: fadeIn 1s forwards 4s;
+  }
+  svg {
+    position: absolute;
+    transform: rotate(4deg) translateY(5%);
+
+    text {
+      fill: transparent;
+      opacity: 0.6;
+      stroke: #ffd700;
+      animation: textAnimation 5s ease-in-out;
+
+      @keyframes textAnimation {
+        0% {
+          stroke-dasharray: 0 50%;
+          stroke-dashoffset: 20%;
+          opacity: 1;
+        }
+        100% {
+          stroke-dasharray: 50% 0;
+          stroke-dashoffset: -20%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

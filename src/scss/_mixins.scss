@@ -1,0 +1,19 @@
+@mixin flex($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+@mixin flex-align-center($direction) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin transition-ease {
+  transition: all 0.3s ease;
+}

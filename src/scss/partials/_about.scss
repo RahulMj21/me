@@ -1,0 +1,84 @@
+.about {
+  .content {
+    min-height: 70%;
+    gap: 2rem;
+    @include flex(center, space-between, row);
+  }
+  &__left {
+    margin-left: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  &__right {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeIn 1s forwards 2.5s;
+    .icons-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      @include flex-center;
+      animation: spin 15s ease-in-out infinite 3s;
+      transform-style: preserve-3d;
+      @keyframes spin {
+        0%,
+        100% {
+          transform: rotateX(0) rotateY(0);
+        }
+        17% {
+          transform: rotateY(90deg);
+        }
+        34% {
+          transform: rotateX(-90deg);
+        }
+        51% {
+          transform: rotateY(270deg);
+        }
+        68% {
+          transform: rotateX(90deg);
+        }
+        85% {
+          transform: rotateY(180deg);
+        }
+      }
+      .icon {
+        position: absolute;
+        height: 13rem;
+        width: 13rem;
+        box-shadow: 0 0 15px 0.05px $yellowLight;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.55)
+        );
+        @include flex-center;
+        font-size: 10rem;
+        &.html {
+          color: $orange1;
+          z-index: 1;
+          transform: translateZ(100px);
+        }
+        &.css {
+          color: $blue;
+          transform: translateZ(-100px);
+        }
+        &.react {
+          color: $skyblue;
+          transform: translateY(50%) rotateX(-90deg);
+        }
+        &.git {
+          color: $orange2;
+          transform: translateY(-50%) rotateX(90deg);
+        }
+        &.js {
+          color: $yellow2;
+          transform: translatex(-50%) rotateY(-90deg);
+        }
+        &.nodejs {
+          color: $green;
+          transform: translatex(50%) rotateY(90deg);
+        }
+      }
+    }
+  }
+}

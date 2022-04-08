@@ -1,0 +1,88 @@
+.contact {
+  .content {
+    min-height: 70%;
+    @include flex(center, space-between, row);
+    gap: 2rem;
+  }
+  &__left {
+    width: 100%;
+    margin-left: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  &__form {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
+    .name-email-group {
+      width: 100%;
+      display: flex;
+      gap: 2rem;
+    }
+    .input-group {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2.5rem;
+      svg {
+        position: absolute;
+        color: $yellow1;
+        top: 50%;
+        left: 0;
+        transform: translateY(-55%);
+        font-size: 1.4rem;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        padding-left: 2rem;
+        background: transparent;
+        border-bottom: 1px solid $yellow1;
+        color: $gray3;
+        font-size: 1.2rem;
+      }
+      input:focus + label,
+      input:valid + label,
+      label.active {
+        transform-origin: top left;
+        transform: translateY(-200%) scale(0.8);
+      }
+      label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+        color: $gray3;
+        letter-spacing: 0.4px;
+        @include transition-ease;
+      }
+    }
+    .btn-brand {
+      width: 8rem;
+      font-size: 1rem;
+      background: $yellow1;
+      color: $dark1;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      &:hover {
+        background: $yellow3;
+      }
+    }
+  }
+  &__right {
+    opacity: 0;
+    animation: bounceIn 1s forwards 2.5s;
+  }
+  &__image {
+    animation: float 6s ease-in-out infinite;
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(-1rem);
+      }
+      50% {
+        transform: translateY(1rem);
+      }
+    }
+  }
+}
