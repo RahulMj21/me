@@ -20,7 +20,7 @@ const Sidebar = () => {
       </NavLink>
       <nav className="nav">
         {links.map(({ text, link, icon }) => (
-          <NavLink activeclassname="active" to={link}>
+          <NavLink activeclassname="active" to={link} key={text}>
             {icon}
             <span>{text}</span>
           </NavLink>

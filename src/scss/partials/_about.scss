@@ -1,18 +1,35 @@
 .about {
   .content {
     min-height: 70%;
-    gap: 2rem;
+    gap: 1rem;
     @include flex(center, space-between, row);
+    @include media-lg {
+      flex-direction: column-reverse !important;
+    }
   }
   &__left {
     margin-left: 4rem;
     margin-bottom: 1.5rem;
+    @include media-lg {
+      margin-top: 7rem;
+    }
+    @include media-md {
+      margin-left: 1.5rem;
+      margin-top: 6rem;
+    }
   }
   &__right {
     width: 100%;
     height: 100%;
     opacity: 0;
+    padding-right: 4rem;
     animation: fadeIn 1s forwards 2.5s;
+    @include media-lg {
+      padding-right: 0;
+      padding-top: 10rem;
+      padding-bottom: 3rem;
+      animation-delay: 1s;
+    }
     .icons-container {
       width: 100%;
       height: 100%;
@@ -53,6 +70,17 @@
         );
         @include flex-center;
         font-size: 10rem;
+        @include media-md {
+          height: 11rem;
+          width: 11rem;
+          font-size: 7rem;
+          &.html {
+            transform: translateZ(90px) !important;
+          }
+          &.css {
+            transform: translateZ(-90px) !important;
+          }
+        }
         &.html {
           color: $orange1;
           z-index: 1;

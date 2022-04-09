@@ -2,12 +2,18 @@
   .content {
     min-height: 70%;
     @include flex(center, space-between, row);
-    gap: 2rem;
+    gap: 1rem;
+    @include media-lg {
+      flex-direction: column-reverse !important;
+    }
   }
   &__left {
     width: 100%;
     margin-left: 4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    @include media-md {
+      margin-left: 2rem;
+    }
   }
   &__form {
     width: 30rem;
@@ -15,10 +21,17 @@
     flex-direction: column;
     opacity: 0;
     animation: fadeIn 1s forwards 1.5s;
+    @include media-md {
+      width: 95%;
+    }
     .name-email-group {
       width: 100%;
       display: flex;
       gap: 2rem;
+      @include media-md {
+        flex-direction: column;
+        gap: 0;
+      }
     }
     .input-group {
       position: relative;
@@ -72,6 +85,9 @@
   &__right {
     opacity: 0;
     animation: bounceIn 1s forwards 2.5s;
+    @include media-lg {
+      animation-delay: 1s;
+    }
   }
   &__image {
     animation: float 6s ease-in-out infinite;

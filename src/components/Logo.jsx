@@ -10,7 +10,7 @@ const Logo = () => {
       <img src={image} alt="R" className="animatedLogo__solid" />
       {/* outlined logo */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 297">
-        <g font-family="URW Gothic" font-size="334.89" font-weight="600">
+        <g fontFamily="URW Gothic" fontSize="334.89" fontWeight="600">
           <text
             xmlSpace="preserve"
             x="11.59"

@@ -53,45 +53,45 @@ const Home = () => {
         {"<"}body{">"}
       </h3>
 
-      <div className="home__left">
-        <h1 className="home__heading">
-          <h3 className="tag h1-open">
-            {"<"}h1{">"}
-          </h3>
-          <h3 className="tag h1-close">
-            {"<"}/h1{">"}
-          </h3>
-          <span className={letterClass}>H</span>
-          <span className={`${letterClass} _12`}>i</span>
-          <span className={`${letterClass} _13`}>,</span>
-          <br />
-          <span className={`${letterClass} _14`}>I</span>
-          <span className={`${letterClass} _15`}>'</span>
-          <span className={`${letterClass} _16`}>m</span>
-          <img
-            src={image}
-            alt="R"
-            className={changeLogoClass ? "home__logoTilt" : "home__logo"}
-            onAnimationEnd={() => setChangeLogoClass(true)}
-          />
-          <AnimatedLetters
-            letterClass={letterClass}
-            letterArray={nameArray}
-            idx={17}
-          />
-          <br />
-          <AnimatedLetters
-            letterClass={letterClass}
-            letterArray={jobArray}
-            idx={25}
-          />
-        </h1>
-        <p className="home__para">Frontend + Backend Javascript-Developer</p>
-        <NavLink to="/contact">
-          <button className="btn-brand">CONTACT ME</button>
-        </NavLink>
-      </div>
-      <div className="home__right">
+      <div className="content">
+        <div className="home__left">
+          <h1 className="home__heading">
+            <h3 className="tag h1-open">
+              {"<"}h1{">"}
+            </h3>
+            <h3 className="tag h1-close">
+              {"<"}/h1{">"}
+            </h3>
+            <span className={letterClass}>H</span>
+            <span className={`${letterClass} _12`}>i</span>
+            <span className={`${letterClass} _13`}>,</span>
+            <br />
+            <span className={`${letterClass} _14`}>I</span>
+            <span className={`${letterClass} _15`}>'</span>
+            <span className={`${letterClass} _16`}>m</span>
+            <img
+              src={image}
+              alt="R"
+              className={changeLogoClass ? "home__logoTilt" : "home__logo"}
+              onAnimationEnd={() => setChangeLogoClass(true)}
+            />
+            <AnimatedLetters
+              letterClass={letterClass}
+              letterArray={nameArray}
+              idx={17}
+            />
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              letterArray={jobArray}
+              idx={25}
+            />
+          </h1>
+          <p className="home__para">Frontend + Backend Javascript-Developer</p>
+          <NavLink to="/contact">
+            <button className="btn-brand">CONTACT ME</button>
+          </NavLink>
+        </div>
         <Logo />
       </div>
 
