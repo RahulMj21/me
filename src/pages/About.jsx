@@ -8,17 +8,21 @@ import {
   FaReact,
   FaNodeJs,
 } from "react-icons/fa";
+import Loader from "../components/Loader";
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
   const [letterClass, setLetterClass] = useState("text-animate");
   const aboutArray = ["A", "b", "o", "u", "t", " ", "M", "e"];
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 5000);
   }, []);
-  return (
+  return loading ? (
+    <Loader setLoading={setLoading} />
+  ) : (
     <section className="about">
       <h3 className="tag html-open">
         {"<"}html{">"}

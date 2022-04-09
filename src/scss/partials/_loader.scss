@@ -1,0 +1,80 @@
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: $dark1;
+  @include flex-center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: none;
+  animation: fadeOut 1s forwards 1.5s;
+
+  .pacman {
+    position: relative;
+    width: 7.5rem;
+    overflow: hidden;
+    @include flex-align-center(row);
+    .eater {
+      position: relative;
+      height: 3rem;
+      width: 3rem;
+      background-color: transparent;
+      border-radius: 50%;
+      overflow: hidden;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 150%;
+        background: $yellow1;
+        top: 0;
+        left: 0;
+      }
+      &::before {
+        transform: translate(-23%, -50%) rotate(0);
+        animation: upLip 0.8s linear infinite;
+      }
+      &::after {
+        transform: translate(-23%, 50%) rotate(0);
+        animation: downLip 0.8s linear infinite;
+      }
+      @keyframes downLip {
+        0%,
+        100% {
+          transform: translate(-23%, 50%) rotate(0);
+        }
+        50% {
+          transform: translate(-23%, 50%) rotate(25deg);
+        }
+      }
+      @keyframes upLip {
+        0%,
+        100% {
+          transform: translate(-23%, -50%) rotate(0);
+        }
+        50% {
+          transform: translate(-23%, -50%) rotate(-25deg);
+        }
+      }
+    }
+    .food {
+      position: absolute;
+      right: -0.5rem;
+      height: 0.5rem;
+      width: 0.5rem;
+      background: $yellow1;
+      border-radius: 50%;
+      animation: goToEater 1s linear infinite;
+      animation-delay: calc(var(--i) * 0.32s);
+    }
+    @keyframes goToEater {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: 80%;
+      }
+    }
+  }
+}

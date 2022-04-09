@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import Logo from "../components/Logo";
 import image from "../assets/images/r_logo.png";
 import AnimatedLetters from "../components/AnimatedLetters";
+import Loader from "../components/Loader";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
   const [changeLogoClass, setChangeLogoClass] = useState(false);
+  const [loading, setLoading] = useState(true);
   const nameArray = [
     "a",
     "h",
@@ -41,10 +43,12 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 7000);
   }, []);
 
-  return (
+  return loading ? (
+    <Loader setLoading={setLoading} />
+  ) : (
     <section className="home">
       <h3 className="tag html-open">
         {"<"}html{">"}
@@ -62,13 +66,25 @@ const Home = () => {
             <h3 className="tag h1-close">
               {"<"}/h1{">"}
             </h3>
-            <span className={letterClass}>H</span>
-            <span className={`${letterClass} _12`}>i</span>
-            <span className={`${letterClass} _13`}>,</span>
+            <span className={letterClass} style={{ "--delay": "1s" }}>
+              H
+            </span>
+            <span className={letterClass} style={{ "--delay": `${12 / 10}s` }}>
+              i
+            </span>
+            <span className={letterClass} style={{ "--delay": `${13 / 10}s` }}>
+              ,
+            </span>
             <br />
-            <span className={`${letterClass} _14`}>I</span>
-            <span className={`${letterClass} _15`}>'</span>
-            <span className={`${letterClass} _16`}>m</span>
+            <span className={letterClass} style={{ "--delay": `${14 / 10}s` }}>
+              I
+            </span>
+            <span className={letterClass} style={{ "--delay": `${15 / 10}s` }}>
+              '
+            </span>
+            <span className={letterClass} style={{ "--delay": `${16 / 10}s` }}>
+              m
+            </span>
             <img
               src={image}
               alt="R"
@@ -84,7 +100,7 @@ const Home = () => {
             <AnimatedLetters
               letterClass={letterClass}
               letterArray={jobArray}
-              idx={25}
+              idx={29}
             />
           </h1>
           <p className="home__para">Frontend + Backend Javascript-Developer</p>

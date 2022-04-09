@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
+import Loader from "../components/Loader";
 
 const Projects = () => {
+  const [loading, setLoading] = useState(true);
   const [letterClass, setLetterClass] = useState("text-animate");
   const projectsArray = ["P", "r", "o", "j", "e", "c", "t", "s"];
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 5000);
   }, []);
-  return (
+
+  return loading ? (
+    <Loader setLoading={setLoading} />
+  ) : (
     <section className="projects">
       <h3 className="tag html-open">
         {"<"}html{">"}

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import { FaRegUser, FaRegEnvelope, FaRegEdit } from "react-icons/fa";
 import image from "../assets/images/contact.png";
+import Loader from "../components/Loader";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
   const [letterClass, setLetterClass] = useState("text-animate");
   const [email, setEmail] = useState();
   const contactArray = ["C", "o", "n", "t", "a", "c", "t", " ", " ", "M", "e"];
@@ -15,10 +17,12 @@ const Contact = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 5000);
   }, []);
 
-  return (
+  return loading ? (
+    <Loader setLoading={setLoading} />
+  ) : (
     <section className="contact">
       <h3 className="tag html-open">
         {"<"}html{">"}
