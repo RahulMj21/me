@@ -7,6 +7,9 @@
   }
   &__solid {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     transform: rotate(4deg) translateY(-50%);
     opacity: 0;
     z-index: 1;
@@ -17,6 +20,8 @@
   }
   svg {
     position: absolute;
+    top: 0;
+    left: 0;
     transform: rotate(4deg) translateY(-50%);
     @include media-md {
       transform: rotate(4deg) translateY(0);
