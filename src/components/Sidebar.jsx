@@ -1,7 +1,13 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdHome } from "react-icons/md";
-import { FaUser, FaEnvelope, FaFacebookF, FaBriefcase } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaFacebookF,
+  FaBriefcase,
+  FaTwitter,
+} from "react-icons/fa";
 import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
 import image from "../assets/images/r_logo.png";
 
@@ -27,18 +33,26 @@ const Sidebar = () => {
         ))}
       </nav>
       <div className="socials">
-        <Link to="https://facebook.com">
-          <FaFacebookF />
-        </Link>
-        <Link to="https://instagram.com">
+        <a href="https://twitter.com/RahulMJ21" target="_blank">
+          <FaTwitter />
+        </a>
+        <a
+          href="https://www.instagram.com/rahulm21j"
+          target="_blank"
+          className="big"
+        >
           <RiInstagramLine />
-        </Link>
-        <Link to="https://github.com" className="big">
+        </a>
+        <a href="https://github.com/RahulMj21" target="_blank" className="big">
           <RiGithubLine />
-        </Link>
-        <Link to="https://linkedin.com">
+        </a>
+        <a
+          href="https://www.linkedin.com/in/rahul-mondal-39927b200"
+          target="_blank"
+          className="big"
+        >
           <RiLinkedinFill />
-        </Link>
+        </a>
       </div>
     </header>
   );
