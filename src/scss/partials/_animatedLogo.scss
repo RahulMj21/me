@@ -17,7 +17,7 @@
     transform: rotate(4deg) translateY(-50%);
     opacity: 0;
     z-index: 1;
-    animation: fadeIn 1s forwards 4s;
+    animation: fadeIn 1s forwards 3.8s;
     @include media-md {
       transform: rotate(4deg) translateY(0);
     }
@@ -43,10 +43,15 @@
           stroke-dashoffset: 20%;
           opacity: 1;
         }
-        100% {
+        65% {
           stroke-dasharray: 50% 0;
           stroke-dashoffset: -20%;
           opacity: 1;
+        }
+        100% {
+          stroke-dasharray: 50% 0;
+          stroke-dashoffset: -20%;
+          opacity: 0;
         }
       }
     }
