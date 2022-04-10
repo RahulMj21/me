@@ -20,6 +20,10 @@
       margin-top: 2rem;
       width: 97%;
     }
+    @include media-sm {
+      width: 100%;
+      margin-left: -0.5rem;
+    }
   }
   &__heading {
     position: relative;
@@ -41,6 +45,8 @@
     }
     @include media-sm {
       font-size: 2rem;
+      letter-spacing: 1px;
+      font-weight: 300;
     }
   }
   &__logo {

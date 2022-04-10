@@ -129,14 +129,20 @@ section {
   }
   &.h1-open {
     position: absolute;
-    top: -1.1rem;
+    top: -1.2rem;
     left: -1rem;
+    @include media-sm {
+      left: -0.5rem;
+    }
   }
   &.h1-close {
     position: absolute;
     font-size: 1.2rem;
     bottom: -2rem;
     right: -2rem;
+    @include media-sm {
+      right: -1rem;
+    }
   }
 }
 .heading {

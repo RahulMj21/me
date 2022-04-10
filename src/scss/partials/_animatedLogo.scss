@@ -5,6 +5,10 @@
     width: 15rem;
     margin: 2rem 0 18rem;
   }
+  @include media-sm {
+    width: 100%;
+    margin: 2rem 0 22rem;
+  }
   &__solid {
     position: absolute;
     top: 0;
@@ -29,7 +33,7 @@
 
     text {
       fill: transparent;
-      opacity: 0.6;
+      opacity: 0;
       stroke: #ffd700;
       animation: textAnimation 5s ease-in-out;
 
