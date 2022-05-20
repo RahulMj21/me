@@ -78,7 +78,7 @@
             transform: translateZ(90px) !important;
           }
           &.css {
-            transform: translateZ(-90px) !important;
+            transform: translateZ(-90px) rotateY(180deg) !important;
           }
         }
         &.html {

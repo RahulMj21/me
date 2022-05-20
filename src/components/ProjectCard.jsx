@@ -2,28 +2,46 @@ import React from "react";
 import codesync from "../assets/images/codesync21.png";
 import { FaEye, FaGithub } from "react-icons/fa";
 
-const ProjectCard = () => {
+const ProjectCard = ({ project, showBorder }) => {
   return (
-    <div className="project-card">
-      <img src={codesync} loading="lazy" alt="codesync" />
+    <div
+      className={`project-card ${showBorder ? "showBorder" : ""}`}
+      style={{ "--delay": `${(2 + (project.id - 1)) / 2}s` }}
+    >
+      <img src={project.poster} loading="lazy" alt="codesync" />
       <div className="right">
-        <h1>1. CodeSync - Realtime multiuser code editor,</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-          alias similique aliquam
-        </p>
+        <h1>
+          {project.id}. {project.title}
+        </h1>
+        <p>{project.description}</p>
         <div className="tags">
-          <div className="item">html</div>
-          <div className="item">css</div>
-          <div className="item">expressjs</div>
+          {project.tags.map((tag) => {
+            return (
+              <div className="item" key={tag}>
+                {tag}
+              </div>
+            );
+          })}
         </div>
         <div className="buttons">
-          <div className="btn-brand">
-            <FaEye /> View Site
-          </div>
-          <div className="btn-brand">
+          {project.live && (
+            <a
+              className="btn-brand"
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaEye /> View Site
+            </a>
+          )}
+          <a
+            className="btn-brand"
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub /> View Code
-          </div>
+          </a>
         </div>
       </div>
     </div>

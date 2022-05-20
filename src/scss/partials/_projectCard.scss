@@ -1,9 +1,41 @@
 .project-card {
-  padding: 2rem 0;
   width: 100%;
-  @include flex-align-center(row);
+  display: flex;
+  align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeIn 1s forwards var(--delay);
+  @include media-lg {
+    .right .buttons {
+      gap: 0.7rem !important;
+      .btn-brand {
+        padding: 0.5rem 0.8rem !important;
+      }
+    }
+  }
+  @include media-md {
+    flex-direction: column !important;
+    align-items: center;
+    &.showBorder {
+      border-bottom: 1px solid $yellow1;
+    }
+    img {
+      width: 100% !important;
+    }
+    .right {
+      padding-bottom: 3rem;
+
+      .buttons {
+        gap: 1rem !important;
+      }
+    }
+  }
+  @include media-sm {
+    .right .buttons {
+      flex-direction: column;
+    }
+  }
   img {
     width: 20rem;
   }
@@ -58,11 +90,13 @@
       display: flex;
       gap: 1.5rem;
       .btn-brand {
-        @include flex-align-center(row);
+        @include flex-center;
         gap: 0.5rem;
         letter-spacing: 0.8px;
         padding: 0.5rem 1rem;
         font-size: 1.05rem;
+        white-space: nowrap;
+        animation: none;
         svg {
           font-size: 1.2rem;
         }

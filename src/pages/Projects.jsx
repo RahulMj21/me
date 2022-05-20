@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import Loader from "../components/Loader";
 import ProjectCard from "../components/ProjectCard";
+import { projects } from "../assets/data";
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
@@ -40,9 +41,15 @@ const Projects = () => {
           />
         </h1>
         <main className="main">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {projects.map((project, idx) => {
+            return (
+              <ProjectCard
+                showBorder={idx + 1 >= projects.length ? false : true}
+                project={project}
+                key={`project- ${project.id}`}
+              />
+            );
+          })}
         </main>
       </div>
 

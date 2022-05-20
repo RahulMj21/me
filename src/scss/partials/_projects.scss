@@ -2,5 +2,11 @@
   .container {
     min-height: 70%;
     margin-left: 4rem;
+    @include media-md {
+      margin-left: 1.5rem;
+    }
+    .main {
+      padding-top: 2.5rem;
+    }
   }
 }
