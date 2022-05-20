@@ -9,20 +9,8 @@
     width: 100%;
     margin: 2rem 0 22rem;
   }
-  &__solid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: rotate(4deg) translateY(-50%);
-    opacity: 0;
-    z-index: 1;
-    animation: fadeIn 1s forwards 3.8s;
-    @include media-md {
-      transform: rotate(4deg) translateY(0);
-    }
-  }
-  svg {
+  .outlined,
+  .solid {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,6 +19,26 @@
       transform: rotate(4deg) translateY(0);
     }
 
+    g {
+      font-family: "Poppins" !important;
+      font-style: normal;
+    }
+  }
+  .solid {
+    z-index: 1;
+    text {
+      opacity: 0;
+      z-index: 1;
+      animation: fadeIn 1s forwards 3.8s;
+    }
+    .text1 {
+      fill: $yellow1 !important;
+    }
+    .text2 {
+      fill: $dark3 !important;
+    }
+  }
+  .outlined {
     text {
       fill: transparent;
       opacity: 0;

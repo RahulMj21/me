@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import Loader from "../components/Loader";
+import ProjectCard from "../components/ProjectCard";
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,11 @@ const Projects = () => {
             idx={9}
           />
         </h1>
+        <main className="main">
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </main>
       </div>
 
       <h3 className="tag body-close">

@@ -1,0 +1,72 @@
+.project-card {
+  padding: 2rem 0;
+  width: 100%;
+  @include flex-align-center(row);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  img {
+    width: 20rem;
+  }
+  .right {
+    width: 100%;
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      color: $gray3;
+    }
+    .tags {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      .item {
+        padding: 0.25rem 0.5rem;
+        color: $black;
+        border-radius: 0.25rem;
+        letter-spacing: 0.5px;
+        &:nth-child(1) {
+          background: $tag1;
+        }
+        &:nth-child(2) {
+          background: $tag2;
+        }
+        &:nth-child(3) {
+          background: $tag3;
+        }
+        &:nth-child(4) {
+          background: $tag4;
+        }
+
+        &:nth-child(5) {
+          background: $tag1;
+        }
+        &:nth-child(6) {
+          background: $tag2;
+        }
+        &:nth-child(7) {
+          background: $tag3;
+        }
+        &:nth-child(8) {
+          background: $tag4;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      gap: 1.5rem;
+      .btn-brand {
+        @include flex-align-center(row);
+        gap: 0.5rem;
+        letter-spacing: 0.8px;
+        padding: 0.5rem 1rem;
+        font-size: 1.05rem;
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

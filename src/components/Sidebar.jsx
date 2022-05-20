@@ -1,13 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdHome } from "react-icons/md";
-import {
-  FaUser,
-  FaEnvelope,
-  FaFacebookF,
-  FaBriefcase,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaUser, FaEnvelope, FaBriefcase, FaTwitter } from "react-icons/fa";
 import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
 import image from "../assets/images/r_logo.png";
 

@@ -9,6 +9,7 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import Loader from "../components/Loader";
+import Bio from "../assets/pdf/bio.pdf";
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -52,7 +53,9 @@ const About = () => {
             confident about my work. Always learning new technologies and
             polishing old learnings.
           </p>
-          <button className="btn-brand">DOWNLOAD CV</button>
+          <a href={Bio} download className="btn-brand">
+            DOWNLOAD CV
+          </a>
         </div>
         <div className="about__right">
           <div className="icons-container">

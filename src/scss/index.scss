@@ -8,8 +8,16 @@
 @import "./partials/contact";
 @import "./partials/projects";
 @import "./partials/loader";
+@import "./partials/projectCard";
 
 @import "animate.css";
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-ExtraBold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: inherit;
+}
 
 @font-face {
   font-family: "Helvetica";

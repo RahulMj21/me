@@ -88,7 +88,7 @@
         }
         &.css {
           color: $blue;
-          transform: translateZ(-100px);
+          transform: translateZ(-100px) rotateY(180deg);
         }
         &.react {
           color: $skyblue;
