@@ -103,7 +103,7 @@ const Home = () => {
               idx={29}
             />
           </h1>
-          <p className="home__para">Frontend + Backend Javascript-Developer</p>
+          <p className="home__para">Full-Stack Web Developer</p>
           <NavLink to="/contact">
             <button className="btn-brand">CONTACT ME</button>
           </NavLink>
