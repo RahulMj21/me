@@ -207,3 +207,47 @@ section {
     font-size: 1.1rem;
   }
 }
+.tags {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  .item {
+    padding: 0.25rem 0.5rem;
+    color: $black;
+    border-radius: 0.25rem;
+    letter-spacing: 0.5px;
+    &:nth-child(1) {
+      background: $tag1;
+    }
+    &:nth-child(2) {
+      background: $tag2;
+    }
+    &:nth-child(3) {
+      background: $tag3;
+    }
+    &:nth-child(4) {
+      background: $tag4;
+    }
+
+    &:nth-child(5) {
+      background: $tag1;
+    }
+    &:nth-child(6) {
+      background: $tag2;
+    }
+    &:nth-child(7) {
+      background: $tag3;
+    }
+    &:nth-child(8) {
+      background: $tag4;
+    }
+    &:nth-child(9) {
+      background: $tag1;
+    }
+    &:nth-child(10) {
+      background: $tag2;
+    }
+  }
+}

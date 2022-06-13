@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Loader from "../components/Loader";
 import Bio from "../assets/pdf/bio.pdf";
+import { skills } from "../assets/data";
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -48,11 +49,18 @@ const About = () => {
             />
           </h1>
           <p className="para">
-            Hi there! I'm very ambitious frontend + backend Javascript developer
-            looking for opportunity to work & collaborate. I am pretty much
-            confident about my work. Always learning new technologies and
-            polishing old learnings.
+            I'm rahul, a passionate developer with a genuine interest in the web
+            and the user experience. I am committed to learning new things to
+            always be improving my skills and finding new approaches to solve
+            problems.
           </p>
+          <div className="tags">
+            {skills.map((skill) => (
+              <div className="item" key={skill}>
+                {skill}
+              </div>
+            ))}
+          </div>
           <a href={Bio} download className="btn-brand">
             DOWNLOAD CV
           </a>

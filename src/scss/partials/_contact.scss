@@ -53,13 +53,17 @@
         border-bottom: 1px solid $yellow1;
         color: $gray3;
         font-size: 1.2rem;
+        letter-spacing: 0.6px;
+        &::placeholder {
+          color: transparent;
+        }
+        &:not(:placeholder-shown) + label,
+        &:focus + label {
+          transform-origin: top left;
+          transform: translateY(-200%) scale(0.8);
+        }
       }
-      input:focus + label,
-      input:valid + label,
-      label.active {
-        transform-origin: top left;
-        transform: translateY(-200%) scale(0.8);
-      }
+
       label {
         position: absolute;
         top: 50%;
@@ -71,14 +75,37 @@
       }
     }
     .btn-brand {
-      width: 8rem;
+      width: 8.5rem;
       font-size: 1rem;
       background: $yellow1;
       color: $dark1;
       padding: 0.5rem 1rem;
       text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      svg {
+        font-size: 1.2rem;
+        display: none;
+      }
+
       &:hover {
         background: $yellow3;
+      }
+
+      &.loading {
+        background: $yellow3;
+        cursor: not-allowed;
+        svg {
+          display: inline-block;
+          animation: rotate 0.6s ease infinite;
+          @keyframes rotate {
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        }
       }
     }
   }

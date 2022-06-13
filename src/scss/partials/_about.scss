@@ -10,6 +10,11 @@
   &__left {
     margin-left: 4rem;
     margin-bottom: 1.5rem;
+    .tags {
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeIn 1s forwards 1.8s;
+    }
     @include media-lg {
       margin-top: 7rem;
     }

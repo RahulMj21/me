@@ -3,15 +3,41 @@ import AnimatedLetters from "../components/AnimatedLetters";
 import { FaRegUser, FaRegEnvelope, FaRegEdit } from "react-icons/fa";
 import image from "../assets/images/contact.png";
 import Loader from "../components/Loader";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { Toaster, toast } from "react-hot-toast";
+import { FaCircleNotch } from "react-icons/fa";
 
 const Contact = () => {
+  const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(true);
+  const [sendingMail, setSendingMail] = useState(false);
   const [letterClass, setLetterClass] = useState("text-animate");
-  const [email, setEmail] = useState();
   const contactArray = ["C", "o", "n", "t", "a", "c", "t", " ", " ", "M", "e"];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmitMail = async (values) => {
+    try {
+      setSendingMail(true);
+      const input = {
+        from: values.email,
+        subject: "From portfolio site",
+        html: `
+          <p>name: ${values.name}</p>
+          <p>email: ${values.email}</p>
+          <p>message: ${values.message}</p>
+        `,
+      };
+      await axios.post(
+        `${process.env.REACT_APP_MAIL_API_URI}/api/v1/send`,
+        input
+      );
+      reset({ name: "", email: "", message: "" });
+      return toast.success("message sent successfully");
+    } catch (err) {
+      return console.log(err);
+    } finally {
+      setSendingMail(false);
+    }
   };
 
   useEffect(() => {
@@ -24,6 +50,7 @@ const Contact = () => {
     <Loader setLoading={setLoading} />
   ) : (
     <section className="contact">
+      <Toaster position="top-right" />
       <h3 className="tag html-open">
         {"<"}html{">"}
       </h3>
@@ -47,14 +74,23 @@ const Contact = () => {
             />
           </h1>
           <p className="para">
-            I'm available to freelance. If you have any project in mind or{" "}
-            <br /> have any queries feel free to contact me.
+            I would love to work & collaborate with new people. If you have any
+            project or queries in your mind, feel free to contact me.
           </p>
-          <form onSubmit={handleSubmit} className="contact__form">
+          <form
+            onSubmit={handleSubmit(handleSubmitMail)}
+            className="contact__form"
+          >
             <div className="name-email-group">
               <div className="input-group">
                 <FaRegUser />
-                <input type="text" required name="name" />
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder="Name"
+                  {...register("name")}
+                />
                 <label htmlFor="name">Name</label>
               </div>
               <div className="input-group">
@@ -62,22 +98,31 @@ const Contact = () => {
                 <input
                   type="email"
                   required
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="email"
+                  placeholder="Email"
+                  {...register("email")}
                 />
-                <label className={email ? "active" : ""} htmlFor="email">
-                  Email
-                </label>
+                <label htmlFor="email">Email</label>
               </div>
             </div>
             <div className="input-group">
               <FaRegEdit />
-              <input type="text" name="message" required />
+              <input
+                placeholder="Message"
+                type="text"
+                name="message"
+                required
+                id="message"
+                {...register("message")}
+              />
               <label htmlFor="message">Message</label>
             </div>
-            <button type="submit" className="btn-brand">
-              Submit
+            <button
+              type="submit"
+              disabled={sendingMail}
+              className={`btn-brand ${sendingMail ? "loading" : ""}`}
+            >
+              Submit <FaCircleNotch />
             </button>
           </form>
         </div>

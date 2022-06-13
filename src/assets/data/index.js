@@ -1,5 +1,16 @@
 import codesync from "../images/codesync21.png";
-
+export const skills = [
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "next.js",
+  "node.js",
+  "express.js",
+  "mongodb",
+  "postgres",
+  "graphql",
+];
 export const projects = [
   {
     id: 1,
